@@ -75,7 +75,7 @@ function gcom {
 set-alias -Name df -Value get-volume
 
 
-oh-my-posh init pwsh --config '%appdata%\_custom\oh-my-posh\theme.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config "$env:APPDATA\_custom\oh-my-posh\theme.omp.json" | Invoke-Expression
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.

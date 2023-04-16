@@ -63,14 +63,28 @@ Set-PSRepository PSGallery -InstallationPolicy Trusted
 Install-Module -Name Terminal-Icons -Repository PSGallery
 
 Write-host "Installing Nerd font" -ForegroundColor red -BackgroundColor white
-# Invoke-RestMethod https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Meslo.zip?WT.mc_id=-blog-scottha -o cove.zip
+$DesktopPath = [Environment]::GetFolderPath("Desktop")
+Invoke-RestMethod https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Meslo.zip?WT.mc_id=-blog-scottha -o "$DesktopPath\cove.zip"
 # explorer.exe
 # Write-host "Installing Nerd font" -ForegroundColor red -BackgroundColor white
 # Pause
 
 Write-host "Install OMP theme" -ForegroundColor red -BackgroundColor white
-New-Item -ItemType Directory -Force -Path '%appdata%/_custom/oh-my-posh'
-Invoke-RestMethod https://gitlab.com/maxim.claeys/windows-init/-/raw/main/theme.omp.json -o '%appdata%\_custom\oh-my-posh\theme.omp.json'
+New-Item -ItemType Directory -Force -Path "$env:APPDATA\_custom\oh-my-posh"
+Invoke-RestMethod https://gitlab.com/maxim.claeys/windows-init/-/raw/main/PowershellTheme/theme.omp.json -o "$env:APPDATA\_custom\oh-my-posh\theme.omp.json"
+
+
+Write-host "Installing deej and configuration" -ForegroundColor red -BackgroundColor white
+New-Item -ItemType Directory -Force -Path "$env:APPDATA\_custom\deej"
+Invoke-RestMethod https://gitlab.com/maxim.claeys/windows-init/-/raw/main/deej/config.yml -o "$env:APPDATA\_custom\deej\config.yml"
+Invoke-RestMethod https://gitlab.com/maxim.claeys/windows-init/-/raw/main/deej/deej.exe -o "$env:APPDATA\_custom\deej\deej.exe"
+Invoke-RestMethod https://gitlab.com/maxim.claeys/windows-init/-/raw/main/deej/bootscript.ps1 -o "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\bootscript.ps1"
+
+#create shortcut for deej.exe
+$WScriptShell = New-Object -ComObject Wscript.Shell
+$Shortcut = $WScriptShell.CreateShortcut("$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\deej.lnk")
+$Shortcut.TargetPath = "$env:APPDATA\_custom\deej\deej.exe"
+$Shortcut.Save
 
 #region Profile
 Write-host "Configuring Profile" -ForegroundColor red -BackgroundColor white
