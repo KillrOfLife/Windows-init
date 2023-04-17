@@ -29,6 +29,7 @@ slider_mapping:
     - portal2.exe
     - TrickyTowers.exe
     - Human.exe
+    - Firewatch.exe
 
   3: deej.current
   4: deej.unmapped
