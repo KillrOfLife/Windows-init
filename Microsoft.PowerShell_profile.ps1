@@ -54,13 +54,13 @@ Function Test-CommandExists {
 # Make it easy to edit this profile once it's installed
 function Edit-Profile {
     if ($host.Name -match "ise") {
-        $psISE.CurrentPowerShellTab.Files.Add($profile.CurrentUserAllHosts)
+        $psISE.CurrentPowerShellTab.Files.Add($profile)
     } elseif (Test-CommandExists code){
-        code $profile.CurrentUserAllHosts
+        code $profile
     } elseif (Test-CommandExists notepad++){
-        notepad++ $profile.CurrentUserAllHosts
+        notepad++ $profile
     } else {
-        notepad $profile.CurrentUserAllHosts
+        notepad $profile
     }
 }
 
