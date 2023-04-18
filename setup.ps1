@@ -65,7 +65,7 @@ Function Install-Sliders{
     Write-host "Do you want a script that updates the current slider configuration on every startup"
     $answer = Show-Menu @("Y", "N")
 
-    if($answer.Contains("Y")){
+    if($answer -contains "Y"){
         Write-host "Creating a bootscript to automatically update sliderconfiguration on startup"
         Invoke-RestMethod https://gitlab.com/maxim.claeys/windows-init/-/raw/main/Deej/bootscript.ps1 -o "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\bootscript.ps1"
     }
@@ -144,22 +144,22 @@ Clear-Host
 Write-Host "Which parts of the script would you like to Run?"
 $result = Show-Menu @("Install Programs", "Install Deej Audiosliders", "Install Powershell Theme and configuration", "Remove Telemetry") -MultiSelect
 
-if($result.Contains("Install Programs")){
+if($result -contains "Install Programs"){
     Install-Programs
     Clear-Host
     Write-Host "Successfully installed the programs"
     Start-Sleep -Seconds 4
 }
-if($result.Contains("Install Deej Audiosliders")){
+if($result -contains "Install Deej Audiosliders"){
     Install-Sliders
     Write-Host "Successfully installed the sliders"
     Start-Sleep -Seconds 4
 }
-if($result.Contains("Install Powershell Theme and configuration")){
+if($result -contains "Install Powershell Theme and configuration"){
     Install-PowershellConfig
     Write-Host "Successfully installed the Profile"
     Start-Sleep -Seconds 4
 }
-if($result.Contains("Remove Telemetry")){
+if($result -contains "Remove Telemetry"){
     remove-telemetry
 }
