@@ -68,6 +68,7 @@ Function Install-Sliders{
     if($answer -contains "Y"){
         Write-host "Creating a bootscript to automatically update sliderconfiguration on startup"
         Invoke-RestMethod https://gitlab.com/maxim.claeys/windows-init/-/raw/main/Deej/bootscript.ps1 -o "$env:APPDATA\_custom\deej\bootscript.ps1"
+        Invoke-RestMethod https://gitlab.com/maxim.claeys/windows-init/-/raw/main/Deej/deej_bootscript.cmd -o "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\deej_bootscript.cmd"
     }
 
     
