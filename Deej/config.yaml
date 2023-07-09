@@ -12,6 +12,9 @@ slider_mapping:
     - brave.exe
     - Spotify.exe
     - plex.exe
+    - RuntimeBroker.exe
+    - Netflix
+    
   2: 
     - GenshinImpact.exe
     - rocketleague.exe
@@ -32,6 +35,10 @@ slider_mapping:
     - Firewatch.exe
     - Builder's Journey.exe
     - starrail.exe
+    - csgo.exe
+    - SlimeRancher2.exe
+    - HogwartsLegacy.exe
+
 
   3: deej.current
   4: deej.unmapped
