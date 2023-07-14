@@ -39,6 +39,7 @@ slider_mapping:
     - SlimeRancher2.exe
     - HogwartsLegacy.exe
     - Stray.exe
+    - Stray-Win64-Shipping.exe
 
 
   3: deej.current
