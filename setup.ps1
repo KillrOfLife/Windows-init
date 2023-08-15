@@ -34,9 +34,28 @@ $programList=   "oh-my-posh",
                 "putty.install",
                 "vlc",
                 "qbittorrent",
+                "intel-arc-graphics-driver",
+                "obs-studio",
+                "lavfilters",
+                "file-converter",
+                "mobaxterm",
+                "portmaster",
+                "rufus",
+                "zerotier-one",
+                "wingetui",
+                "vscode",
+                "windirstat",
+                "tailscale",
+                "firefox",
+                "logioptionsplus",
+                "epicgameslauncher",
+                "icue",
 #fonts
                 "nerd-fonts-meslo",
                 "firacode"
+
+# PlayStation.DualSenseFWUpdater
+# Synology.DriveClient
 
 # winget install vscode
 #winget install PuTTY.PuTTY
