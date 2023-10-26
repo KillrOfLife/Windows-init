@@ -44,6 +44,8 @@ slider_mapping:
     - Techtonica.exe
     - PaliaClient-Win64-Shipping.exe
     - Warframe.x64.exe
+    - reverse1999.exe
+    - StarRail.exe
 
 
   3: deej.current
